@@ -32,9 +32,11 @@ const Navbar = () => {
                     <button onClick={toggleTheme} className="theme-toggle btn-icon mobile-only" aria-label="Toggle Theme">
                         {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                     </button>
-                    <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle Menu">
-                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
+                    {user && (
+                        <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle Menu">
+                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
+                    )}
                 </div>
 
                 <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
